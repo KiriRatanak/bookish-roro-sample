@@ -1,0 +1,46 @@
+{
+ "name": "bookish-roro-sample",
+ "version": "1.0.0",
+ "description": "An app skeleton represent the usage of RORO pattern as well as other convention that make good architecture (DI, SOC, etc)",
+ "main": "index.js",
+ "scripts": {
+  "prestart": "npm run -s build",
+  "start": "node dist/index.js",
+  "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist",
+  "clean": "rimraf dist",
+  "test": "jest"
+ },
+ "author": "Kiriratanak Vorn",
+ "license": "ISC",
+ "dependencies": {
+  "body-parser": "^1.19.0",
+  "express": "^4.17.1",
+  "joi": "^17.2.1",
+  "mongodb": "^3.6.0"
+ },
+ "devDependencies": {
+  "@babel/cli": "^7.10.5",
+  "babel-jest": "^26.3.0",
+  "@babel/core": "^7.11.4",
+  "@babel/preset-env": "^7.11.0",
+  "faker": "^5.1.0",
+  "jest": "^26.4.2",
+  "rimraf": "^3.0.2"
+ },
+ "jest": {
+  "verbose": true,
+  "testRegex": ".spec.js"
+ },
+ "babel": {
+  "presets": [
+   [
+    "@babel/env",
+    {
+     "targets": {
+      "node": "10.8.0"
+     }
+    }
+   ]
+  ]
+ }
+}
